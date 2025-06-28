@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-06-27T23:12:50 IST" name="Default suite" finished-at="2025-06-27T23:13:36 IST" duration-ms="45895">
+    <groups>
+    </groups>
+    <test started-at="2025-06-27T23:12:50 IST" name="Default test" finished-at="2025-06-27T23:13:36 IST" duration-ms="45895">
+      <class name="com.packA.FormIncreamentTest">
+        <test-method signature="form_Creation_With_Response_Method()[pri:0, instance:com.packA.FormIncreamentTest@d35dea7]" started-at="2025-06-27T23:12:50 IST" name="form_Creation_With_Response_Method" finished-at="2025-06-27T23:13:36 IST" duration-ms="45822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- form_Creation_With_Response_Method -->
+      </class> <!-- com.packA.FormIncreamentTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
