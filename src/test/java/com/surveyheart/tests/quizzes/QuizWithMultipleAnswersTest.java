@@ -1,0 +1,127 @@
+package com.surveyheart.tests.quizzes;
+
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import com.surveyheart.base.BaseTest;
+import com.surveyheart.enums.QuizQuestionType;
+import com.surveyheart.pages.FormDashboardPage;
+import com.surveyheart.pages.QuizBuilderPage;
+import com.surveyheart.pages.QuizDashboardPage;
+import com.surveyheart.pages.QuizPage;
+import com.surveyheart.pages.QuizSettingsPage;
+import com.surveyheart.pages.SharePopupPage;
+import com.surveyheart.pages.SubmittedPage;
+import com.surveyheart.pages.SurveyHeartLoginPage;
+import com.surveyheart.utilities.ExtentManager;
+
+
+/** Test class to verify that a quiz allows multiple attempts when 'Allow Multiple Attempts' is enabled */
+@Listeners(com.surveyheart.listeners.TestListener.class)
+public class QuizWithMultipleAnswersTest extends BaseTest {
+	
+	@Test (groups = "regression", priority = 21)
+	public void verifyQuizWithMultipleAnswers() {
+		
+	    // ===== Login to SurveyHeart =====
+	    SurveyHeartLoginPage loginPage = new SurveyHeartLoginPage(driver);
+				    loginPage.clickSignInUsingEmail();
+				    loginPage.enterEmail("gofaw36836@pacfut.com");
+				    loginPage.clickNext();
+				    loginPage.enterPassword("Automation@1");
+				    loginPage.clickSignIn();
+				    loginPage.closeFeatureSpotlightIfPresent();
+				    ExtentManager.getTest().pass("Login successful with email and password.");
+
+	    // ===== Navigate to Quiz Dashboard =====
+	    FormDashboardPage formDashboardPage = new FormDashboardPage(driver);
+	    
+				    formDashboardPage.refreshPage();
+				    formDashboardPage.clickQuizzesTab();
+				    
+	 // Quiz Dashboard - Initialize the Quiz Dashboard Page object with the current WebDriver instance
+	    QuizDashboardPage quizDashboardPage = new QuizDashboardPage(driver);
+	    			quizDashboardPage.clickCreateQuizButton();                   // Click on +Create Quiz button
+
+	    // ===== Quiz Builder Page =====
+	    QuizBuilderPage quizBuilderPage = new QuizBuilderPage(driver);
+
+	             // Set dynamic Quiz title
+				    String dynamicQuizTitle = "MultipleAnswersQuiz " + System.currentTimeMillis();
+				    quizBuilderPage.enterQuizTitle(dynamicQuizTitle);
+
+				    // ==== Add a Short Answer question ====
+				    quizBuilderPage.addQuestion(
+				        QuizQuestionType.SHORT_ANSWER,
+				        "What is your name?",
+				        "Madhu",               // Answer
+				        null,                  // No options
+				        -1                     // No correct option
+				    );
+
+	    
+	 // Quiz Settings - Initialize the Quiz settings object with the current WebDriver instance
+	   	QuizSettingsPage quizSettingsPage = new QuizSettingsPage(driver);
+	   	
+				   	quizSettingsPage.clickSettingsButton();
+					quizSettingsPage.clickControlTab();
+				    quizSettingsPage.enableAllowMultipleAttempts(true);
+	   				ExtentManager.getTest().pass("<b>'Allow Multiple Attempts'</b> checkbox enabled successfully.");
+	   				quizSettingsPage.clickSubmitButton();
+	   				ExtentManager.getTest().info("Quiz created successfully with : "+dynamicQuizTitle);  	        
+					    
+	// SharePopup - Initialize the Share popup object with the current WebDriver instance
+	   SharePopupPage sharePopupPage = new SharePopupPage(driver);
+	   
+		   			sharePopupPage.storeParentWindowHandle();                           // Store parent window
+					sharePopupPage.clickViewIcon();
+					sharePopupPage.switchToChildWindowThroughViewIcon();
+							
+							
+	// Quiz page - Initialize the Quiz page object with the current WebDriver instance
+	   QuizPage quizPage = new QuizPage(driver);
+	   
+	   				quizPage.clickStart();
+	   				quizPage.enterName("Sounder");
+	   				quizPage.clickStartQuiz();
+	   				
+	   			 // Quiz page - 1st attempt
+	   				String quizTitle = quizPage.getQuizTitle();
+	   				quizPage.answerShortQuestion("Sounder Arunachalam");
+					String totalQuestionCount = quizPage.getTotalQuestionCount();
+					ExtentManager.getTest().info("Quiz page displayed with " + totalQuestionCount + " question."); 
+					quizPage.clickSubmitButton();
+					
+					  
+	// Submitted page - Initialize the Submitted page object with the current WebDriver instance
+	   SubmittedPage submittedPage = new SubmittedPage(driver);
+	   				 submittedPage.isSubmittedMessageDisplayed();
+	   				 submittedPage.isViewResultsButtonDisplayed();
+	   				 ExtentManager.getTest().pass("<b>'Submitted'</b> page displayed successfully on the first attempt with the <b>'View Results'</b> button : <b>"+quizTitle+"</b>");
+				
+	   			 
+	   			 // Refresh the Submitted page - for Quiz 2nd attempt
+	   				submittedPage.refreshPage();
+	   				
+	   			 // Welcome page
+	   				quizPage.clickStart();
+	   				quizPage.enterName("Gopi");
+	   				quizPage.clickStartQuiz();
+	
+	   			 // Quiz page - 2nd attempt
+	   				String quizTitle2 = quizPage.getQuizTitle();
+	   				quizPage.answerShortQuestion("Gopi krishna");
+					String totalQuestionCount2 = quizPage.getTotalQuestionCount();
+					ExtentManager.getTest().info("Quiz page displayed with " + totalQuestionCount2 + " question."); 
+					quizPage.clickSubmitButton();
+					
+				 // Submitted page
+	   				submittedPage.isSubmittedMessageDisplayed();
+	   				submittedPage.isViewResultsButtonDisplayed();
+	   				ExtentManager.getTest().pass("<b>'Submitted'</b> page displayed successfully on the second attempt with the <b>'View Results'</b> button : <b>"+quizTitle2+"</b>");
+				
+					
+	   				
+	}
+
+}
