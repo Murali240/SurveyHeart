@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-20T21:10:03 IST" name="SanitySuite" finished-at="2025-11-20T21:16:13 IST" duration-ms="369504">
+    <groups>
+      <group name="sanity">
+        <method signature="FormUpdateTest.verifyFormUpdate()[pri:1, instance:com.surveyheart.tests.forms.FormUpdateTest@38e79ae3]" name="verifyFormUpdate" class="com.surveyheart.tests.forms.FormUpdateTest"/>
+        <method signature="FormDeleteTest.verifyFormDeletion()[pri:2, instance:com.surveyheart.tests.forms.FormDeleteTest@3571b748]" name="verifyFormDeletion" class="com.surveyheart.tests.forms.FormDeleteTest"/>
+        <method signature="FormInactiveToActiveStatusTest.makeInactiveFormActive()[pri:3, instance:com.surveyheart.tests.forms.FormInactiveToActiveStatusTest@3e96bacf]" name="makeInactiveFormActive" class="com.surveyheart.tests.forms.FormInactiveToActiveStatusTest"/>
+        <method signature="FormStatusChangeToInactiveTest.verifyChangeFormStatusToInactive()[pri:4, instance:com.surveyheart.tests.forms.FormStatusChangeToInactiveTest@484970b0]" name="verifyChangeFormStatusToInactive" class="com.surveyheart.tests.forms.FormStatusChangeToInactiveTest"/>
+      </group> <!-- sanity -->
+    </groups>
+    <test started-at="2025-11-20T21:10:03 IST" name="SanityTests" finished-at="2025-11-20T21:16:13 IST" duration-ms="369504">
+      <class name="com.surveyheart.tests.forms.FormUpdateTest">
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.surveyheart.tests.forms.FormUpdateTest@38e79ae3]" started-at="2025-11-20T21:10:03 IST" name="setUp" finished-at="2025-11-20T21:10:16 IST" duration-ms="12573" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.surveyheart.tests.forms.FormUpdateTest.verifyFormUpdate()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyFormUpdate()[pri:1, instance:com.surveyheart.tests.forms.FormUpdateTest@38e79ae3]" started-at="2025-11-20T21:10:16 IST" name="verifyFormUpdate" finished-at="2025-11-20T21:11:39 IST" duration-ms="83381" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFormUpdate -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.surveyheart.tests.forms.FormUpdateTest@38e79ae3]" started-at="2025-11-20T21:11:39 IST" name="tearDown" finished-at="2025-11-20T21:11:40 IST" duration-ms="1145" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.surveyheart.tests.forms.FormUpdateTest -->
+      <class name="com.surveyheart.tests.forms.FormStatusChangeToInactiveTest">
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.surveyheart.tests.forms.FormStatusChangeToInactiveTest@484970b0]" started-at="2025-11-20T21:15:16 IST" name="setUp" finished-at="2025-11-20T21:15:25 IST" duration-ms="8386" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.surveyheart.tests.forms.FormStatusChangeToInactiveTest.verifyChangeFormStatusToInactive()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyChangeFormStatusToInactive()[pri:4, instance:com.surveyheart.tests.forms.FormStatusChangeToInactiveTest@484970b0]" started-at="2025-11-20T21:15:25 IST" name="verifyChangeFormStatusToInactive" finished-at="2025-11-20T21:16:12 IST" duration-ms="47619" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyChangeFormStatusToInactive -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.surveyheart.tests.forms.FormStatusChangeToInactiveTest@484970b0]" started-at="2025-11-20T21:16:12 IST" name="tearDown" finished-at="2025-11-20T21:16:13 IST" duration-ms="419" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.surveyheart.tests.forms.FormStatusChangeToInactiveTest -->
+      <class name="com.surveyheart.tests.forms.FormDeleteTest">
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.surveyheart.tests.forms.FormDeleteTest@3571b748]" started-at="2025-11-20T21:11:40 IST" name="setUp" finished-at="2025-11-20T21:11:48 IST" duration-ms="7572" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.surveyheart.tests.forms.FormDeleteTest.verifyFormDeletion()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyFormDeletion()[pri:2, instance:com.surveyheart.tests.forms.FormDeleteTest@3571b748]" started-at="2025-11-20T21:11:48 IST" name="verifyFormDeletion" finished-at="2025-11-20T21:14:09 IST" duration-ms="140720" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFormDeletion -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.surveyheart.tests.forms.FormDeleteTest@3571b748]" started-at="2025-11-20T21:14:09 IST" name="tearDown" finished-at="2025-11-20T21:14:09 IST" duration-ms="353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.surveyheart.tests.forms.FormDeleteTest -->
+      <class name="com.surveyheart.tests.forms.FormInactiveToActiveStatusTest">
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.surveyheart.tests.forms.FormInactiveToActiveStatusTest@3e96bacf]" started-at="2025-11-20T21:14:09 IST" name="setUp" finished-at="2025-11-20T21:14:15 IST" duration-ms="5676" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.surveyheart.tests.forms.FormInactiveToActiveStatusTest.makeInactiveFormActive()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="makeInactiveFormActive()[pri:3, instance:com.surveyheart.tests.forms.FormInactiveToActiveStatusTest@3e96bacf]" started-at="2025-11-20T21:14:15 IST" name="makeInactiveFormActive" finished-at="2025-11-20T21:15:16 IST" duration-ms="61052" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- makeInactiveFormActive -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.surveyheart.tests.forms.FormInactiveToActiveStatusTest@3e96bacf]" started-at="2025-11-20T21:15:16 IST" name="tearDown" finished-at="2025-11-20T21:15:16 IST" duration-ms="477" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.surveyheart.tests.forms.FormInactiveToActiveStatusTest -->
+    </test> <!-- SanityTests -->
+  </suite> <!-- SanitySuite -->
+</testng-results>

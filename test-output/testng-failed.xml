@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [SanitySuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="SanityTests(failed)">
+    <groups>
+      <run>
+        <include name="sanity"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.surveyheart.tests.forms.FormInactiveToActiveStatusTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="makeInactiveFormActive"/>
+        </methods>
+      </class> <!-- com.surveyheart.tests.forms.FormInactiveToActiveStatusTest -->
+      <class name="com.surveyheart.tests.forms.FormUpdateTest">
+        <methods>
+          <include name="verifyFormUpdate"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.surveyheart.tests.forms.FormUpdateTest -->
+    </classes>
+  </test> <!-- SanityTests(failed) -->
+</suite> <!-- Failed suite [SanitySuite] -->
