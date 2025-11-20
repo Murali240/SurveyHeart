@@ -31,21 +31,21 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- WebDriverManager (optional but recommended) -->
+    <!-- WebDriverManager -->
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
       <version>5.8.0</version>
     </dependency>
 
-    <!-- ExtentReports (if you use it) -->
+    <!-- ExtentReports -->
     <dependency>
       <groupId>com.aventstack</groupId>
       <artifactId>extentreports</artifactId>
       <version>5.1.1</version>
     </dependency>
 
-    <!-- Apache POI if used -->
+    <!-- Apache POI (if used) -->
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi-ooxml</artifactId>
@@ -55,7 +55,6 @@
 
   <build>
     <plugins>
-      <!-- Compiler plugin: compile to Java 11 (adjust if you need 17/21) -->
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.11.0</version>
@@ -64,7 +63,6 @@
         </configuration>
       </plugin>
 
-      <!-- Surefire plugin to run TestNG suite -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -78,3 +76,4 @@
     </plugins>
   </build>
 </project>
+
